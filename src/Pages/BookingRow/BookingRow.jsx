@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const BookingRow = ({ booking, handleDelete }) => {
+const BookingRow = ({ booking, handleDelete, handleConfirm }) => {
     console.log(booking);
-    const { _id, customerName, img, service, price, email, date } = booking;
+    const { _id, customerName, img, service, price, email, date, status } = booking;
 
     return (
         <tr>
@@ -25,7 +25,12 @@ const BookingRow = ({ booking, handleDelete }) => {
             <td>{date}</td>
             <td>{price}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                {
+                    status === 'confirm' ?
+                        <button className="btn btn-outline btn-secondary font-bold">Confirmed</button>
+                        :
+                        <button onClick={() => handleConfirm(_id)} className="btn  btn-warning text-white">Please Confirm</button>
+                }
             </th>
         </tr>
     );

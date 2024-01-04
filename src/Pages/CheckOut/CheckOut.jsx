@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from './../../Auth/AuthProvider';
 
 const CheckOut = () => {
+    const navigate = useNavigate()
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
     const { _id, price, title, service_id, img } = service;
@@ -40,6 +41,7 @@ const CheckOut = () => {
         })
             .then(res => res.json())
             .then(data => {
+                navigate('/bookings')
                 console.log(data)
                 if (data.insertedId) {
                     alert('Service book successfully')

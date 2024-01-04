@@ -40,7 +40,7 @@ const NavBar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">
+                <Link to='/' className=" h-20 w-20 text-xl">
                     <img src={logo} alt="" />
                 </Link>
             </div>
