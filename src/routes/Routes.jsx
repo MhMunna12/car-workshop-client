@@ -6,6 +6,7 @@ import Register from "../Pages/Login/Register/Register";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Bookings from "../Pages/Bookings/Bookings";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ServiceDetail from "../Pages/Home/Services/ServiceDetail/ServiceDetail";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/serviceDetail',
+                element: <ServiceDetail></ServiceDetail>
             },
             {
                 path: 'checkout/:id',

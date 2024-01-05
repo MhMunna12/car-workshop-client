@@ -5,6 +5,8 @@ import About from '../About/About';
 import Services from '../Services/Services';
 import AreaService from '../AreaService/AreaService';
 import PopularProduct from '../PopularProduct/PopularProduct';
+import Engineer from '../Engineer/Engineer';
+import CoreFeatures from '../../CoreFeatures/CoreFeatures';
 
 
 
@@ -17,6 +19,8 @@ const Home = () => {
             <Services />
             <AreaService />
             <PopularProduct />
+            <Engineer></Engineer>
+            <CoreFeatures />
         </div>
     );
 };
