@@ -16,7 +16,7 @@ const ServiceCard = ({ service }) => {
 
                 <div className="card-actions text-orange-500 flex justify-between items-center">
                     <h6 >Price: ${price}</h6>
-                    <Link to={`/checkout/${_id}`}>
+                    <Link to={`/serviceDetail/${_id}`}>
                         <h6 ><FaArrowRight /></h6>
                     </Link>
                 </div>

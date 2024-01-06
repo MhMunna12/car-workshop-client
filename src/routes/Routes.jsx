@@ -27,12 +27,15 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/serviceDetail',
-                element: <ServiceDetail></ServiceDetail>
+                path: '/serviceDetail/:id',
+                element: <ServiceDetail></ServiceDetail>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: 'checkout/:id',
-                element: <CheckOut></CheckOut>,
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+
+                ,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
