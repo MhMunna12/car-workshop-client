@@ -29,14 +29,14 @@ const router = createBrowserRouter([
             {
                 path: '/serviceDetail/:id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-workshop-server.vercel.app/services/${params.id}`)
             },
             {
                 path: 'checkout/:id',
                 element: <CheckOut></CheckOut>
 
                 ,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-workshop-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/bookings',
