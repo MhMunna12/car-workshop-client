@@ -22,7 +22,7 @@ const BookingRow = ({ booking, handleDelete, handleConfirm }) => {
             <td>
                 {service}
             </td>
-            <td>{date}</td>
+            <td>{email}</td>
             <td>{price}</td>
             <th>
                 {

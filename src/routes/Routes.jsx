@@ -7,6 +7,8 @@ import CheckOut from "../Pages/CheckOut/CheckOut";
 import Bookings from "../Pages/Bookings/Bookings";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ServiceDetail from "../Pages/Home/Services/ServiceDetail/ServiceDetail";
+import PaymentSuccess from "../Pages/payment/paymentSuccess";
+import PaymentFail from "../Pages/payment/PaymentFail";
 
 const router = createBrowserRouter([
     {
@@ -29,18 +31,26 @@ const router = createBrowserRouter([
             {
                 path: '/serviceDetail/:id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({ params }) => fetch(`https://car-workshop-server.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: 'checkout/:id',
                 element: <CheckOut></CheckOut>
 
                 ,
-                loader: ({ params }) => fetch(`https://car-workshop-server.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/bookings',
                 element: <PrivateRoute><Bookings></Bookings></PrivateRoute>,
+            },
+            {
+                path: '/payment/success',
+                element: <PaymentSuccess />
+            },
+            {
+                path: '/payment/fail',
+                element: <PaymentFail />
             }
         ]
     },

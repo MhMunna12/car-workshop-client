@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
                 const loggedUser = {
                     email: currentUser.email,
                 }
-                fetch('https://car-workshop-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -47,6 +47,7 @@ const AuthProvider = ({ children }) => {
                     .then(data => {
                         console.log(data);
                         //warning second best place
+                        console.log(data.token);
                         localStorage.setItem('car-access-token', data.token);
                     })
             }

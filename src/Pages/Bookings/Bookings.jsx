@@ -9,7 +9,7 @@ const Bookings = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
-    const url = `https://car-workshop-server.vercel.app/booking?email=${user?.email}`
+    const url = `http://localhost:5000/booking?email=${user?.email}`
     useEffect(() => {
         fetch(url, {
             method: 'GET',
@@ -32,7 +32,7 @@ const Bookings = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
         if (proceed) {
-            const url = `https://car-workshop-server.vercel.app/booking/${id}`
+            const url = `http://localhost:5000/booking/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -51,7 +51,7 @@ const Bookings = () => {
     const handleConfirm = id => {
         const proceed = confirm('Are You sure you want change Service Status');
         if (proceed) {
-            const url = `https://car-workshop-server.vercel.app/booking/${id}`
+            const url = `http://localhost:5000/booking/${id}`
             fetch(url, {
                 method: 'PATCH',
                 headers: {
@@ -84,7 +84,7 @@ const Bookings = () => {
                         </th>
                         <th>Image</th>
                         <th>Service Name</th>
-                        <th>Service Date</th>
+                        <th>Email</th>
                         <th>Price</th>
                         <th>Status</th>
                     </tr>
